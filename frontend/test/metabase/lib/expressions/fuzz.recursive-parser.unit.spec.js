@@ -2,7 +2,7 @@ import { parse } from "metabase-lib/expressions/recursive-parser";
 
 import { generateExpression } from "./generator";
 
-const fuzz = process.env.MB_FUZZ ? describe : describe.skip;
+const fuzz = process.env.MB_FUZZ ? describe : () => {};
 
 const handle = source => parse(source);
 
