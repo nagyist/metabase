@@ -547,7 +547,7 @@
 (defn- check-perms-with-fn
   ([fn-symb read-or-write a-model object-id]
    (or (current-user-has-root-permissions?)
-    (methodical/prefer-method! #'t2.before-insert/before-insert ::timestamped? ::entity-id)      (check-perms-with-fn fn-symb read-or-write (t2/select-one a-model (models/primary-key a-model) object-id))))
+       (check-perms-with-fn fn-symb read-or-write (t2/select-one a-model (models/primary-key a-model) object-id))))
 
   ([fn-symb read-or-write object]
    (and object
